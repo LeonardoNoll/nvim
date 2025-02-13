@@ -1,0 +1,9 @@
+{
+  "useState": {
+    "prefix": "useStateSnippet",
+    "body": [
+      "const [${1:state}, set${1:State}] = useState(${2:initialValue});"
+    ],
+    "description": "React useState hook"
+  }
+}
