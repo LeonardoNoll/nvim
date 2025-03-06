@@ -11,7 +11,7 @@ keymap.set("n", "-", "<C-x>")
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Save file and quit
-keymap.set("n", "<Leader>w", ":update<Return>", opts)
+keymap.set("n", "<C-S>", ":update<Return>", opts)
 keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 
