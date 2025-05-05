@@ -33,3 +33,6 @@ vim.opt.mouse = ""
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+-- Disable blink-cmp-copilo
+-- vim.g.copilot_no_tab_map = true
+vim.g.ai_cmp = false
