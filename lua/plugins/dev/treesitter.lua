@@ -1,9 +1,10 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.1",
+    -- tag = "v0.9.1",
     opts = {
       ensure_installed = {
+        "json",
         "javascript",
         "typescript",
         "css",
@@ -14,6 +15,9 @@ return {
         "scss",
         "sql",
         "vim",
+        "lua",
+        "c",
+        "markdown",
         "lua",
       },
       query_linter = {

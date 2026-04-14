@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -17,8 +18,8 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        -- colorscheme = "sonokai",
         colorscheme = "tokyonight",
+        -- colorscheme = "catppuccin",
         news = {
           lazyvim = true,
           neovim = true,
@@ -32,6 +33,10 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "plugins" },
+    { import = "plugins.ui" },
+    { import = "plugins.utils" },
+    { import = "plugins.dev" },
+    { import = "plugins.git" },
   },
   defaults = {
     lazy = false,

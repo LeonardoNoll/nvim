@@ -1,38 +1,48 @@
 vim.g.mapleader = " "
 
+-- Encoding
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
-vim.opt.number = true
+local opt = vim.opt
 
-vim.opt.title = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.hlsearch = true
-vim.opt.backup = false
-vim.opt.showcmd = true
-vim.opt.cmdheight = 0
-vim.opt.laststatus = 0
-vim.opt.expandtab = true
-vim.opt.scrolloff = 10
-vim.opt.inccommand = "split"
-vim.opt.ignorecase = true
-vim.opt.smarttab = true
-vim.opt.breakindent = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.wrap = false
-vim.opt.backspace = { "start", "eol", "indent" }
-vim.opt.path:append({ "**" })
-vim.opt.wildignore:append({ "*/node_modules/*" })
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.splitkeep = "cursor"
-vim.opt.mouse = ""
+-- UI
+opt.number = true
+opt.title = true
+opt.laststatus = 0
+opt.scrolloff = 10
+
+-- Indent
+opt.autoindent = true
+opt.smartindent = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.backspace = { "start", "eol", "indent" }
+
+-- Search
+opt.hlsearch = true
+
+-- Split
+opt.splitbelow = true
+opt.splitright = true
+opt.splitkeep = "cursor"
+
+-- Other
+opt.backup = false
+opt.showcmd = true
+opt.cmdheight = 0
+opt.expandtab = true
+opt.inccommand = "split"
+opt.ignorecase = true
+opt.breakindent = true
+opt.wrap = false
+opt.path:append({ "**" })
+opt.wildignore:append({ "*/node_modules/*" })
+opt.mouse = ""
 
 -- Add asterisks in block comments
-vim.opt.formatoptions:append({ "r" })
--- Disable blink-cmp-copilo
--- vim.g.copilot_no_tab_map = true
-vim.g.ai_cmp = false
+opt.formatoptions:append({ "r" })
+
+vim.g.ai_cmp = false -- Disable blink-cmp copilot
+vim.b.copilot_enabled = false

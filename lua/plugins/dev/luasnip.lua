@@ -1,4 +1,3 @@
--- In your plugins.lua or similar file
 return {
   {
     "hrsh7th/vim-vsnip",

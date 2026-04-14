@@ -16,8 +16,8 @@ keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 
 -- File explorer with NvimTree
-keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
-keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
+-- keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
+-- keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
 
 -- Tabs
 keymap.set("n", "te", ":tabedit<Return>", opts)
@@ -42,6 +42,18 @@ keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
+keymap.set("n", "<C-d>", function()
   vim.diagnostic.goto_next()
 end, opts)
+
+-- Toggle true & false
+local function toggleTrueFalse()
+  local word = vim.fn.expand("<cword>")
+  if word == "true" then
+    vim.cmd("normal! ciwfalse")
+  elseif word == "false" then
+    vim.cmd("normal! ciwtrue")
+  end
+end
+
+keymap.set("n", "<leader>tf", toggleTrueFalse, { desc = "Toggle True False" }, { noremap = true, silent = true })
